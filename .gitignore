@@ -1,0 +1,7 @@
+*.log
+*.m4
+*.cache
+configure
+**/*.o
+**/*.DS_Store
+**/test
