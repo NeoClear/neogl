@@ -15,7 +15,11 @@ int nl::run(nl_group *head)
             point->swap_self_buffer();
             glfwPollEvents();
         } else {
-            break;
+            if (head->remove() == nl_false)
+                break;
+            point->next()->prev(point->prev());
+            point->prev()->next(point->next());
+            point->destroy_self();
         }
         point = point->next();
     }

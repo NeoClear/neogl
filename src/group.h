@@ -4,6 +4,7 @@
 #include "window.h"
 #include <GLFW/glfw3.h>
 
+class nl_window;
 class nl_group
 {
 private:
@@ -12,6 +13,7 @@ private:
 public:
     nl_group();
     int add(nl_window *item);
+    int remove();
     nl_window *get_head();
 };
 

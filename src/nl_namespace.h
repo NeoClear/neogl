@@ -4,6 +4,24 @@
 #include <GLFW/glfw3.h>
 #include "group.h"
 
+class nl_group;
+
+enum nl_color
+{
+    nl_red = 0,
+    nl_green = 1,
+    nl_blue = 2,
+    nl_dark = 3,
+    nl_light = 4,
+    nl_solarized = 5,
+};
+
+enum nl_bool
+{
+    nl_false = 0,
+    nl_true = 1,
+};
+
 namespace nl {
     int init();
     int run(nl_group *head);

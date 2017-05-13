@@ -1,9 +1,10 @@
 #include "window.h"
 
 
-nl_window::nl_window(int width, int height, const char *title): prev_window(NULL), next_window(NULL)
+nl_window::nl_window(int _width, int _height, const char *_title): prev_window(NULL), next_window(NULL)
 {
-    nl_win = glfwCreateWindow(width, height, title, NULL, NULL);
+    nl_win = glfwCreateWindow(_width, _height, _title, NULL, NULL);
+    title = _title;
 }
 
 nl_window::~nl_window() {}
@@ -51,6 +52,18 @@ int nl_window::color(int color)
         glClearColor(0.0f, 0.0f, 1.0f, 0.0f);
         nl_color = nl_blue;
         break;
+    case nl_dark:
+        glClearColor(0.17578125f, 0.17578125f, 0.17578125f, 0.0f);
+        nl_color = nl_dark;
+        break;
+    case nl_light:
+        glClearColor(0.98828125f, 0.9609375f, 0.890625f, 0.0f);
+        nl_color = nl_light;
+        break;
+    case nl_solarized:
+        glClearColor(0.0078125f, 0.016796875f, 0.20703125f, 0.0f);
+        nl_color = nl_solarized;
+        break;
     }
     return 0;
 }
@@ -85,3 +98,13 @@ int nl_window::id()
     return group_id;
 }
 
+int nl_window::destroy_self()
+{
+    glfwDestroyWindow(nl_win);
+    return 0;
+}
+
+const char *nl_window::title_self()
+{
+    return title;
+}
