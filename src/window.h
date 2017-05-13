@@ -2,7 +2,7 @@
 #define WINDOW_H
 
 #include <stdio.h>
-#include <GL/glew.h>
+#include <OpenGL/gl.h>
 #include <GLFW/glfw3.h>
 
 enum nl_color
@@ -42,20 +42,5 @@ public:
     int id();
 };
 
-class nl_group
-{
-private:
-    nl_window *head;
-    int number;
-public:
-    nl_group();
-    int add(nl_window *item);
-    nl_window *get_head();
-};
-
-namespace nl {
-    int init();
-    int run(nl_group *head);
-}
-
 #endif
+

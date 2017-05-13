@@ -4,4 +4,6 @@
 configure
 **/*.o
 **/*.DS_Store
-**/test
+**/main
+**.a
+**.html
