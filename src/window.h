@@ -7,6 +7,8 @@
 #include "nl_namespace.h"
 #include "widget.h"
 
+class nl_widget;
+
 class nl_window
 {
 private:

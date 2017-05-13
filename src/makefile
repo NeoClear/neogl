@@ -20,7 +20,7 @@ nl_call_main.o: nl_call_main.cpp
 widget.o: widget.cpp
 	$(cc) -c widget.cpp
 button.o: button.cpp
-	$(cc) -c button
+	$(cc) -c button.cpp
 
 .PHONY: clean run
 
