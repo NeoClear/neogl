@@ -1,9 +1,11 @@
 #include "window.h"
 
-
 nl_window::nl_window(int _width, int _height, const char *_title): prev_window(NULL), next_window(NULL)
 {
+    scale = new nl_point;
     nl_win = glfwCreateWindow(_width, _height, _title, NULL, NULL);
+    scale->x = _width;
+    scale->y = _height;
     title = _title;
 }
 
@@ -107,4 +109,9 @@ int nl_window::destroy_self()
 const char *nl_window::title_self()
 {
     return title;
+}
+
+nl_point *nl_window::scale_self()
+{
+    return scale;
 }

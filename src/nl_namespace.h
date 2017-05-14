@@ -6,6 +6,12 @@
 
 class nl_group;
 
+struct nl_point
+{
+    int x;
+    int y;
+};
+
 enum nl_color
 {
     nl_red = 0,

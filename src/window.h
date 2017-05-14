@@ -8,17 +8,20 @@
 #include "widget.h"
 
 class nl_widget;
+class nl_button;
+struct nl_point;
 
 class nl_window
 {
 private:
     GLFWwindow *nl_win;
+    nl_point *scale;
     int nl_color;
     nl_window *prev_window, *next_window;
     int group_id;
     const char *title;
-    nl_widget *sub_head;
 public:
+    nl_button *sub_head;
     nl_window(int width, int height, const char *title);
     ~nl_window();
     GLFWwindow *value();
@@ -35,6 +38,7 @@ public:
     int id();
     int destroy_self();
     const char *title_self();
+    nl_point *scale_self();
 };
 
 #endif

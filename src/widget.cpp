@@ -2,20 +2,27 @@
 
 nl_widget::nl_widget(int _x, int _y, int _w, int _h, const char *_caption)
 {
-    xpoint = _x;
-    ypoint = _y;
-    width = _w;
-    height = _h;
+    place = new nl_point;
+    scale = new nl_point;
+    place->x = _x;
+    place->y = _y;
+    scale->x = _w;
+    scale->y = _h;
     caption = _caption;
 }
 nl_widget::~nl_widget()
 {
 
 }
-int nl_widget::draw()
+
+int nl_widget::par(nl_window *_par)
 {
-    return nl_true;
+    parent = _par;
 }
+/* int nl_widget::draw() */
+/* { */
+/*     return nl_true; */
+/* } */
 int nl_widget::prev(nl_widget *_prev)
 {
     prev_widget = _prev;

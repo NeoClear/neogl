@@ -25,6 +25,8 @@ int nl_main(int argc, char *argv[])
     nl_window *macos = new nl_window(640, 480, "macos");
     nl_window *linux = new nl_window(640, 480, "linux");
     nl_group *gg = new nl_group();
+    linux->sub_head = new nl_button(100, 100, 100, 100, "2333");
+    linux->sub_head->par(linux);
     win->color(nl_blue);
     win10->color(nl_solarized);
     macos->color(nl_light);
@@ -37,11 +39,12 @@ int nl_main(int argc, char *argv[])
     while (!linux->should_close())
     {
         glClear(GL_COLOR_BUFFER_BIT);
+        linux->sub_head->draw();
         /* glColor3f(0.98f, 0.625f, 0.12f); */
         /* //绘制矩形，第一对坐标表示左上角，第二对表示右下角 */
         /* glRectf(-0.2f, 0.2f, 0.2f, -0.2f); */
         /* glFlush(); */
-        trans(640, 480);
+        /* trans(640, 480); */
         /* Swap front and back buffers */
         linux->swap_self_buffer();
         /* Poll for and process events */
