@@ -25,7 +25,7 @@ int nl_main(int argc, char *argv[])
     nl_window *macos = new nl_window(640, 480, "macos");
     nl_window *linux = new nl_window(640, 480, "linux");
     nl_group *gg = new nl_group();
-    linux->sub_head = new nl_button(100, 100, 100, 100, "2333");
+    linux->sub_head = new nl_button(100, 100, 100, 100, "2333", nl_green);
     linux->sub_head->par(linux);
     win->color(nl_blue);
     win10->color(nl_solarized);

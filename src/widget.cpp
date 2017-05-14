@@ -19,10 +19,10 @@ int nl_widget::par(nl_window *_par)
 {
     parent = _par;
 }
-/* int nl_widget::draw() */
-/* { */
-/*     return nl_true; */
-/* } */
+int nl_widget::draw()
+{
+    return nl_true;
+}
 int nl_widget::prev(nl_widget *_prev)
 {
     prev_widget = _prev;

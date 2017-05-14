@@ -23,7 +23,7 @@ protected:
 public:
     nl_widget(int _x, int _y, int _w, int _h, const char *caption);
     ~nl_widget();
-    /* int draw(); */
+    virtual int draw();
     int prev(nl_widget *_prev);
     int next(nl_widget *_next);
     int par(nl_window *_par);
