@@ -21,15 +21,15 @@ private:
     int group_id;
     const char *title;
 public:
-    nl_button *sub_head;
-    nl_window(int width, int height, const char *title);
+    nl_widget *sub_head;
+    nl_window(int _width, int _height, const char *_title);
     ~nl_window();
     GLFWwindow *value();
     int prev(nl_window *_prev);
     int next(nl_window *_next);
     nl_window *prev();
     nl_window *next();
-    int color(int color);
+    int color(int _color);
     int color();
     int should_close();
     void swap_self_buffer();
