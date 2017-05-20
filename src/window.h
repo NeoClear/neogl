@@ -15,6 +15,9 @@ class nl_window
 {
 public:
     int widget_num;
+    double curse_x, curse_y;
+    int mouse_left_pressed;
+    int mouse_right_pressed;
 private:
     GLFWwindow *nl_win;
     nl_point *scale;
@@ -26,6 +29,7 @@ public:
     nl_widget *sub_head;
     nl_window(int _width, int _height, const char *_title);
     ~nl_window();
+    static void cursor_pos_callback(GLFWwindow *win, double x, double y);
     int add(nl_widget *item);
     GLFWwindow *value();
     int prev(nl_window *_prev);

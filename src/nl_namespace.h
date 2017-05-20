@@ -3,8 +3,10 @@
 
 #include <GLFW/glfw3.h>
 #include "group.h"
+#include "window.h"
 
 class nl_group;
+class nl_window;
 
 struct nl_point
 {
@@ -31,6 +33,8 @@ enum nl_bool
 namespace nl
 {
     extern int nl_error_num;
+    void set_mouse_pos(nl_window *item);
+    void set_mouse_action(nl_window *item);
     void error();
     int init();
     int run(nl_group *head);

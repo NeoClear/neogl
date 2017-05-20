@@ -1,12 +1,18 @@
 #include "window.h"
 
-nl_window::nl_window(int _width, int _height, const char *_title): prev_window(NULL), next_window(NULL), widget_num(0), sub_head(NULL)
+/* void nl_window::cursor_pos_callback(GLFWwindow *win, double x, double y) */
+/* { */
+/*     nl::set_pos(x, y); */
+/* } */
+
+nl_window::nl_window(int _width, int _height, const char *_title): widget_num(0), prev_window(NULL), next_window(NULL), sub_head(NULL)
 {
     scale = new nl_point;
     nl_win = glfwCreateWindow(_width, _height, _title, NULL, NULL);
     scale->x = _width;
     scale->y = _height;
     title = _title;
+    /* glfwSetCursorPosCallback(nl_win, cursor_pos_callback); */
 }
 
 nl_window::~nl_window() {}
