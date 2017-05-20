@@ -1,6 +1,6 @@
 #include "widget.h"
 
-nl_widget::nl_widget(int _x, int _y, int _w, int _h, const char *_caption)
+nl_widget::nl_widget(int _x, int _y, int _w, int _h, const char *_caption): pushed(nl_false), entered(nl_false)
 {
     place = new nl_point;
     scale = new nl_point;
@@ -41,4 +41,10 @@ nl_widget *nl_widget::prev()
 nl_widget *nl_widget::next()
 {
     return next_widget;
+}
+
+int nl_widget::handle(int e)
+{
+    printf("UNLIKELY: %d\n", e);
+    return nl_unlikely;
 }

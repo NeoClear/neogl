@@ -10,5 +10,6 @@ private:
 public:
     nl_button(int _x, int _y, int _w, int _h, const char *_title, int _theme);
     virtual int draw();
+    virtual int handle(int e);
 };
 #endif

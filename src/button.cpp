@@ -11,6 +11,8 @@ nl_button::nl_button(int _x, int _y, int _w, int _h, const char *_title, int _th
     scale->y = _h;
     caption = _title;
     theme = _theme;
+    pushed = 0;
+    entered = 0;
 }
 
 int nl_button::draw()
@@ -45,4 +47,25 @@ int nl_button::draw()
     glRectf(x1, y1, x2, y2);
     glFlush();
     return 0;
+}
+
+int nl_button::handle(int e)
+{
+    switch (e) {
+    case nl_push:
+        printf("%s: PUSH\n", caption);
+        break;
+    case nl_up:
+        printf("%s: UP\n", caption);
+        break;
+    case nl_enter:
+        printf("%s: ENTER\n", caption);
+        break;
+    case nl_leave:
+        printf("%s: LEAVE\n", caption);
+        break;
+    default:
+        printf("%s: NOTHING\n", caption);
+    }
+    return nl_success;
 }

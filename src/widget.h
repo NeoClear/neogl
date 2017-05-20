@@ -9,16 +9,18 @@ class nl_window;
 
 class nl_widget
 {
-private:
-    nl_widget *prev_widget, *next_widget;
-
-protected:
+public:
+    int pushed;
+    int entered;
     const char *caption;
     nl_point *place;
     nl_point *scale;
     nl_window *parent;
     float x1, y1;
     float x2, y2;
+
+private:
+    nl_widget *prev_widget, *next_widget;
 
 public:
     nl_widget(int _x, int _y, int _w, int _h, const char *caption);
@@ -29,5 +31,6 @@ public:
     int par(nl_window *_par);
     nl_widget *prev();
     nl_widget *next();
+    virtual int handle(int e);
 };
 #endif

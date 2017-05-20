@@ -49,6 +49,37 @@ void nl::set_mouse_action(nl_window *item)
         item->mouse_right_pressed = nl_false;
 }
 
+void nl::give_event(nl_window *win, nl_widget *item)
+{
+    int _xpos = (int)win->curse_x;
+    int _ypos = (int)win->curse_y;
+    int _left_but = win->mouse_left_pressed;
+    /* int _right_but = win->mouse_right_pressed; */
+    int left_up_x = item->place->x;
+    int left_up_y = item->place->y;
+    int right_down_x = item->place->x + item->scale->x;
+    int right_down_y = item->place->y + item->scale->y;
+    if (_xpos >= left_up_x && _xpos <= right_down_x && _ypos >= left_up_y && _ypos <= right_down_y) {
+        if (_left_but == nl_true && item->pushed == nl_false) {
+            item->pushed = nl_true;
+            item->handle(nl_push);
+        }
+        if (_left_but == nl_false && item->pushed == nl_true) {
+            item->pushed = nl_false;
+            item->handle(nl_up);
+        }
+        if (item->entered == nl_false) {
+            item->entered = nl_true;
+            item->handle(nl_enter);
+        }
+    } else {
+        if (item->entered == nl_true) {
+            item->entered = nl_false;
+            item->handle(nl_leave);
+        }
+    }
+}
+
 int nl::run(nl_group *head)
 {
     nl_window *point = head->get_head();
@@ -62,6 +93,7 @@ int nl::run(nl_group *head)
             if (point->widget_num != 0) {
                 temp = point->sub_head;
                 for (int i = 0; i < point->widget_num; i++) {
+                    give_event(point, temp);
                     temp->draw();
                     temp = temp->next();
                 }
