@@ -13,6 +13,8 @@ struct nl_point;
 
 class nl_window
 {
+public:
+    int widget_num;
 private:
     GLFWwindow *nl_win;
     nl_point *scale;
@@ -24,6 +26,7 @@ public:
     nl_widget *sub_head;
     nl_window(int _width, int _height, const char *_title);
     ~nl_window();
+    int add(nl_widget *item);
     GLFWwindow *value();
     int prev(nl_window *_prev);
     int next(nl_window *_next);

@@ -28,7 +28,10 @@ enum nl_bool
     nl_true = 1,
 };
 
-namespace nl {
+namespace nl
+{
+    extern int nl_error_num;
+    void error();
     int init();
     int run(nl_group *head);
 }

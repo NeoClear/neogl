@@ -18,6 +18,7 @@ nl_widget::~nl_widget()
 int nl_widget::par(nl_window *_par)
 {
     parent = _par;
+    return 0;
 }
 int nl_widget::draw()
 {

@@ -24,33 +24,34 @@ int nl_main(int argc, char *argv[])
     nl_window *win10 = new nl_window(640, 480, "windows10");
     nl_window *macos = new nl_window(640, 480, "macos");
     nl_window *linux = new nl_window(640, 480, "linux");
-    nl_group *gg = new nl_group();
-    linux->sub_head = new nl_button(100, 100, 100, 100, "2333", nl_green);
-    linux->sub_head->par(linux);
+    nl_group *global_group= new nl_group();
+    nl_button *ins = new nl_button(100, 100, 100, 100, "2333", nl_light);
+    linux->add(ins);
     win->color(nl_blue);
     win10->color(nl_solarized);
     macos->color(nl_light);
     linux->color(nl_dark);
-    gg->add(win);
-    gg->add(win10);
-    gg->add(macos);
-    gg->add(linux);
+    global_group->add(win);
+    global_group->add(win10);
+    global_group->add(macos);
+    global_group->add(linux);
+    return nl::run(global_group);
     /* return nl::run(gg); */
-    while (!linux->should_close())
-    {
-        glClear(GL_COLOR_BUFFER_BIT);
-        linux->sub_head->draw();
-        /* glColor3f(0.98f, 0.625f, 0.12f); */
-        /* //绘制矩形，第一对坐标表示左上角，第二对表示右下角 */
-        /* glRectf(-0.2f, 0.2f, 0.2f, -0.2f); */
-        /* glFlush(); */
-        /* trans(640, 480); */
-        /* Swap front and back buffers */
-        linux->swap_self_buffer();
-        /* Poll for and process events */
-        glfwPollEvents();
+    /* while (!linux->should_close()) */
+    /* { */
+    /*     glClear(GL_COLOR_BUFFER_BIT); */
+    /*     linux->sub_head->draw(); */
+    /*     /1* glColor3f(0.98f, 0.625f, 0.12f); *1/ */
+    /*     /1* //绘制矩形，第一对坐标表示左上角，第二对表示右下角 *1/ */
+    /*     /1* glRectf(-0.2f, 0.2f, 0.2f, -0.2f); *1/ */
+    /*     /1* glFlush(); *1/ */
+    /*     /1* trans(640, 480); *1/ */
+    /*     /1* Swap front and back buffers *1/ */
+    /*     linux->swap_self_buffer(); */
+    /*     /1* Poll for and process events *1/ */
+    /*     glfwPollEvents(); */
 
-    }
-    glfwTerminate();
-    return 0;
+    /* } */
+    /* glfwTerminate(); */
+    /* return 0; */
 }

@@ -1,6 +1,6 @@
 #include "window.h"
 
-nl_window::nl_window(int _width, int _height, const char *_title): prev_window(NULL), next_window(NULL)
+nl_window::nl_window(int _width, int _height, const char *_title): prev_window(NULL), next_window(NULL), widget_num(0), sub_head(NULL)
 {
     scale = new nl_point;
     nl_win = glfwCreateWindow(_width, _height, _title, NULL, NULL);
@@ -10,6 +10,26 @@ nl_window::nl_window(int _width, int _height, const char *_title): prev_window(N
 }
 
 nl_window::~nl_window() {}
+
+int nl_window::add(nl_widget *item)
+{
+    widget_num++;
+    if (widget_num == 1) {
+        sub_head = item;
+        sub_head->prev(sub_head);
+        sub_head->next(sub_head);
+        sub_head->par(this); 
+        return nl_true;
+    }
+    nl_widget *ins;
+    ins = sub_head->next();
+    item->next(ins);
+    item->prev(sub_head);
+    sub_head->next(item);
+    ins->prev(item);
+    item->par(this);
+    return nl_true;
+}
 
 GLFWwindow *nl_window::value()
 {
