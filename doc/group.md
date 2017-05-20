@@ -1,9 +1,9 @@
-#group.h
+# group.h
 - a class to manage the windows of one applicaion
 
 ---
 ---
-##variables
+## variables
 - `nl_window *head`
     - the pointer holds the **circle of the windows bend**
 - `int number`
@@ -11,7 +11,7 @@
 
 ---
 ---
-##functions
+## functions
 - `nl_group()`
     - initialize some of the variables
 - `int add(nl_window *item)`
@@ -26,5 +26,5 @@
 
 ---
 ---
-##author: neoclear
-##e-mail: saogong123456@outlook.com
+## author: neoclear
+## e-mail: saogong123456@outlook.com

@@ -1,9 +1,9 @@
-#widget.h
+# widget.h
 - the base class of all the widgets in the window
 
 ---
 ---
-##variables
+## variables
 - `nl_widget *prev_widget, *next_widget`
     - the pointer **to construct the circle**
     - **not used yet**
@@ -22,7 +22,7 @@
 
 ---
 ---
-##functions
+## functions
 - `nl_widget(int _x, int _y, int _w, int _h, const char *caption)`
     - the constructor. **set the scale and location and title**
 - `~nl_widget()`
@@ -45,5 +45,5 @@
 
 ---
 ---
-##author: neoclear
-##e-mail: saogong123456@outlook.com
+## author: neoclear
+## e-mail: saogong123456@outlook.com

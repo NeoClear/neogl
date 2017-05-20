@@ -1,9 +1,9 @@
-#window.h
+# window.h
 - a class called nl_window to carry the function of GLFWwindow.
 
 ---
 ---
-##variables
+## variables
 - `GLFWwindow *nl_win`
     - the class pointer containing the **real window info**
 - `nl_point *scale`
@@ -21,7 +21,7 @@
 
 ---
 ---
-##functions
+## functions
 - `nl_window(int _width, int _height, const char *_title)`
     - **initlize the window.**
 - `~nl_window()`
@@ -62,5 +62,5 @@
     - **nl_point see in nl_namespace.md**
 
 ---
-##author: neoclear
-##e-mail: saogong123456@outlook.com
+## author: neoclear
+## e-mail: saogong123456@outlook.com
