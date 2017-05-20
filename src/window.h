@@ -19,13 +19,13 @@ public:
     int mouse_left_pressed;
     int mouse_right_pressed;
     int focused;
+    nl_point *scale;
+    const char *title;
 private:
     GLFWwindow *nl_win;
-    nl_point *scale;
     int nl_color;
     nl_window *prev_window, *next_window;
     int group_id;
-    const char *title;
 public:
     nl_widget *sub_head;
     nl_window(int _width, int _height, const char *_title);

@@ -53,6 +53,7 @@ namespace nl
     void set_mouse_pos(nl_window *item);
     void set_mouse_action(nl_window *item);
     void give_event(nl_window *win, nl_widget *item);
+    void change_frame_scale(nl_window *item);
     int check_focus(nl_window *item);
     void error();
     int init();

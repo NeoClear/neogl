@@ -80,6 +80,14 @@ void nl::give_event(nl_window *win, nl_widget *item)
     }
 }
 
+void nl::change_frame_scale(nl_window *item)
+{
+    int w, h;
+    glfwGetFramebufferSize(item->value(), &w, &h);
+    item->scale->x = w;
+    item->scale->y = h;
+}
+
 int nl::check_focus(nl_window *item)
 {
     int focused = glfwGetWindowAttrib(item->value(), GLFW_FOCUSED);
@@ -91,6 +99,7 @@ int nl::run(nl_group *head)
     nl_window *point = head->get_head();
     while (nl_true) {
         point->make_self_current();
+        change_frame_scale(point);
         if (!point->should_close()) {
             glClear(GL_COLOR_BUFFER_BIT);
             nl_widget *temp;
