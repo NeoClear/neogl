@@ -18,6 +18,7 @@ public:
     double curse_x, curse_y;
     int mouse_left_pressed;
     int mouse_right_pressed;
+    int focused;
 private:
     GLFWwindow *nl_win;
     nl_point *scale;

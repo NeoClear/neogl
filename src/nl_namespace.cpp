@@ -80,6 +80,12 @@ void nl::give_event(nl_window *win, nl_widget *item)
     }
 }
 
+int nl::check_focus(nl_window *item)
+{
+    int focused = glfwGetWindowAttrib(item->value(), GLFW_FOCUSED);
+    return focused;
+}
+
 int nl::run(nl_group *head)
 {
     nl_window *point = head->get_head();
@@ -93,7 +99,8 @@ int nl::run(nl_group *head)
             if (point->widget_num != 0) {
                 temp = point->sub_head;
                 for (int i = 0; i < point->widget_num; i++) {
-                    give_event(point, temp);
+                    if (check_focus(point))
+                        give_event(point, temp);
                     temp->draw();
                     temp = temp->next();
                 }
