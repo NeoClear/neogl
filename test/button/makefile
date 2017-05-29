@@ -1,5 +1,5 @@
 obj = main.o
-cc = gcc -g -lstdc++ -lglfw -I/usr/local/include -L/usr/local/lib -framework OpenGL -I ~/neoclear/neogl/src ~/neoclear/neogl/src/pack.a
+cc = gcc -g -lstdc++ -lglfw -I/usr/local/include -L/usr/local/lib -framework OpenGL -I ../../src ../../src/pack.a
 
 all: $(obj)
 	$(cc) -o main $(obj)

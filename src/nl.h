@@ -6,6 +6,7 @@
 #include "window.h"
 #include "group.h"
 #include "nl_namespace.h"
+#include "slide.h"
 
 #endif
 

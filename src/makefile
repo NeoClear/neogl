@@ -1,7 +1,7 @@
 cc = gcc -g -lstdc++ -lglfw -I/usr/local/include -L/usr/local/lib -framework OpenGL
 ar = ar cr
-obj = main.o window.o group.o nl_namespace.o nl_call_main.o widget.o button.o
-lib = window.o group.o nl_namespace.o nl_call_main.o widget.o button.o
+obj = main.o window.o group.o nl_namespace.o nl_call_main.o widget.o button.o slide.o
+lib = window.o group.o nl_namespace.o nl_call_main.o widget.o button.o slide.o
 
 all: $(obj)
 	$(cc) -o main $(obj)
@@ -21,6 +21,8 @@ widget.o: widget.cpp
 	$(cc) -c widget.cpp
 button.o: button.cpp
 	$(cc) -c button.cpp
+slide.o: slide.cpp
+	$(cc) -c slide.cpp
 
 .PHONY: clean run
 

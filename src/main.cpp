@@ -23,24 +23,16 @@ int nl_main(int argc, char *argv[])
     /* nl_window *win = new nl_window(640, 480, "windows"); */
     /* nl_window *win10 = new nl_window(640, 480, "windows10"); */
     nl_window *macos = new nl_window(640, 480, "macos");
-    nl_window *linux = new nl_window(640, 480, "linux");
     nl_group *global_group= new nl_group();
-    nl_button *ins = new nl_button(100, 100, 100, 100, "light", nl_light);
-    nl_button *a1 = new nl_button(200, 200, 100, 100, "green", nl_green);
-    nl_button *a2 = new nl_button(100, 400, 100, 100, "red", nl_red);
-    nl_button *as = new nl_button(111, 222, 333, 100, "dark", nl_dark);
-    linux->add(ins);
-    linux->add(a1);
-    linux->add(a2);
+    nl_slide *star = new nl_slide(100, 100, 300, 100, "blue", nl_blue);
+
     /* win->add(a1); */
     /* win10->add(a2); */
-    macos->add(as);
+    macos->add(star);
     /* win->color(nl_blue); */
     /* win10->color(nl_solarized); */
     macos->color(nl_light);
-    linux->color(nl_dark);
     global_group->add(macos);
-    global_group->add(linux);
     return nl::run(global_group);
     /* return nl::run(gg); */
     /* while (!linux->should_close()) */
