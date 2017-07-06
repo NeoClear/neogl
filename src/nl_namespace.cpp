@@ -107,6 +107,7 @@ int nl::run(nl_group *head)
             set_mouse_action(point);
             if (point->widget_num != 0) {
                 temp = point->sub_head;
+                nl_font::draw(640, 480);
                 for (int i = 0; i < point->widget_num; i++) {
                     if (check_focus(point))
                         give_event(point, temp);

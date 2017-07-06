@@ -5,6 +5,7 @@
 #include "group.h"
 #include "window.h"
 #include "widget.h"
+#include "font.h"
 
 class nl_group;
 class nl_window;
